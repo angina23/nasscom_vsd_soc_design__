@@ -1,4 +1,4 @@
- Nasscom_vsd_soc_design__
+# Nasscom_vsd_soc_design__
 
 ### `DURATION : 21 AUGUST 2024 -3 SEPTEMBER 2024`
 ![image](https://github.com/user-attachments/assets/c84556e5-748c-469e-8376-b7bcfed1e3ff)
@@ -395,3 +395,392 @@ New commands inserted in sky130A.tech file to update drc
 ![image](https://github.com/user-attachments/assets/2c1d8c6b-4cf4-4a9a-9cd4-463a829a06c8)
 ![image](https://github.com/user-attachments/assets/09b3b25b-e70e-40bf-810c-94737029a4ad)
 ![image](https://github.com/user-attachments/assets/aaab06b7-c35b-47f1-90f9-9eb1d0a2e943)
+
+
+# **Day-4: Prelayout timing analysis and importance of good clock tree.**
+
+**Convert grid info to track info**
+```c
+// Change directory to vsdstdcelldesign
+cd Desktop/work/tools/openlane_working_dir/openlane/vsdstdcelldesign
+
+// Command to open custom inverter layout in magic
+magic -T sky130A.tech sky130_inv.mag &
+```
+![image](https://github.com/user-attachments/assets/404a3104-aa01-492f-8a62-d24c18f34b96)
+![image](https://github.com/user-attachments/assets/a8dfe218-7452-44db-9f7d-927e36639a8f)
+```c
+//opening [tracks.info](http://tracks.info) file
+less tracks.info
+```
+![image](https://github.com/user-attachments/assets/e718fac1-e53c-45d3-97d1-6f0bbf675203)
+![image](https://github.com/user-attachments/assets/41974549-3413-4cec-82f6-3549f537dc99)
+```c
+ Here li1 X 0.23  0.46  = (alignment layer__horizontal __**offset__**pitch) 
+      met1  X 0.17 0.34  = (metal layer__horizontal __**offset__**pitch) 
+```
+![image](https://github.com/user-attachments/assets/140eb045-6b27-4fc4-b78f-aa002ce56b90)
+**GUIDELINES FOR MAKING STANDARD CELL LAYOUT.**
+
+1. The input and output port must lie on the interaction of the vertical and horizontal tracks.
+2. The width of the standard cells should be in the odd multiples of the track pitch. Height must be even multiple of the vertical pitch. 
+
+Setting the alignment layer info of horizontal and vertical direction from the [tracks.info](http://tracks.info) file as the grid parameters (according to the format ).
+![image](https://github.com/user-attachments/assets/815bfcb3-c085-47bc-a648-2ea221364133)
+For 1st condition and 2nd condition:
+
+The output and input port lie on the intersection of tracks.
+
+For width of the standard cell:
+
+$$
+ no. of the cell = 2+1/2 +1/2 =3
+$$
+
+$$
+ width = 3*0.46=1.38um
+$$
+![image](https://github.com/user-attachments/assets/5f56be24-63d7-4e9f-b2e9-9859e47b12a4)
+For height of the standard cell:
+
+$$
+no. of cell = 7+1/2+1/2 = 8
+$$
+
+$$
+height = 8*0.34 =2.72um
+$$
+![image](https://github.com/user-attachments/assets/ed089d2c-a267-4312-b83e-ff7aa20e27f8)
+**Layout file defines the layers, contacts of cell in magic.**
+
+**LEF file defines the ports as the pins of the macros.**
+
+```c
+//Converting labels to ports
+select the port —>Edit—>Text
+```
+![image](https://github.com/user-attachments/assets/634e6840-0dca-47c4-bdd2-550408dac573)
+![image](https://github.com/user-attachments/assets/9c516d25-ba6f-45b4-ab08-f3c6e0bbab30)
+![image](https://github.com/user-attachments/assets/f80d8e47-ccc3-4b4b-a722-16279d0c942c)
+saving as LEF file
+![image](https://github.com/user-attachments/assets/999a898c-f7c4-4b2d-86b1-d61fc971cd45)
+```c
+//Command to save as
+save sky130_vsdinv.mag
+//opening the file 
+magic -T sky130A.tech sky130_vsdinv.mag &
+//writing lef file
+lef write
+//opening lef file
+less sky130_vsdinv.lef
+```
+![image](https://github.com/user-attachments/assets/9b717419-f970-48b7-857b-1d6e458298c1)
+![image](https://github.com/user-attachments/assets/c00e6527-0d0b-4d34-9bc8-37dab8d84cbf)
+Newly created LEF file:
+![image](https://github.com/user-attachments/assets/7427685d-7878-4c70-8f2e-320179f0b069)
+![image](https://github.com/user-attachments/assets/e8e3132a-6547-4a1a-bff4-d6d18e906907)
+```c
+//Copying the LEF file in picorv32a
+cp sky130_vsdinv.lef /home/vsduder/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src
+
+```
+![image](https://github.com/user-attachments/assets/7a561777-130c-4db5-9083-d4ee2d86d703)
+Libraries in vsdstdcelldesign:
+![image](https://github.com/user-attachments/assets/68736787-7924-49a9-8845-0609b9e3b937)
+Fast library
+![image](https://github.com/user-attachments/assets/8476b821-d34a-4725-925f-162a7e685326)
+Slow library
+![image](https://github.com/user-attachments/assets/cb4c9897-4ca9-41b2-a46c-b7a60cb1497e)
+Typical library
+![image](https://github.com/user-attachments/assets/55a3b524-7517-4fc5-82c5-de383d02e162)
+```c
+//copying the libraries in src folder of picorv32a
+cp sky130_fd_sc_hd_* /home/vsduder/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/src
+```
+
+**Modified file:**
+
+**LIB_SYNTH for ABC mapping**
+
+**other three for STA analysis**
+![image](https://github.com/user-attachments/assets/85bdb0a2-0ad0-4b37-b7fd-08830f6ab799)
+```c
+//Change directory to openlane flow directory
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+//we can invoke the OpenLANE flow docker sub-system by just running this command
+docker
+
+// After entering the OpenLANE flow, we can invoke the OpenLANE flow in the Interactive mode using the following command
+./flow.tcl -interactive
+
+// Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
+package require openlane 0.9
+
+// Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
+prep -design picorv32a 
+
+//Adiitional commands to include newly added lef to openlane flow
+ set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+ add_lefs -src $lefs
+```
+
+```c
+// Now that the design is prepped and ready, we can run synthesis using following command
+run_synthesis
+```
+![image](https://github.com/user-attachments/assets/ea7b05bd-ba82-4c3e-add1-d620b59c1800)
+![image](https://github.com/user-attachments/assets/f4bb9d94-5dfd-4f1b-9f50-542be6e30376)
+```c
+//to open merged.lef file inside runs/tmp
+less merged.lef
+```
+
+![image](https://github.com/user-attachments/assets/3abc83e5-3139-43b7-ad03-812f71cd1828)
+
+```c
+//due to error in the flow during run_flooplan , following commands were run after run synthesis
+init_floorplan
+place_io
+tap_decap_or
+//then for placement
+run_placement
+```
+
+![image](https://github.com/user-attachments/assets/e0a8c87a-445c-4701-bd1e-4fa76056cace)
+
+```c
+// Change directory to path containing generated placement def
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/01-09_15-54/results/placement/
+
+// Command to load the placement def in magic tool
+magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.placement.def &
+```
+
+![image](https://github.com/user-attachments/assets/f16a2bb9-b2a2-4c62-beda-e168e5401735)
+
+![image](https://github.com/user-attachments/assets/d1971908-eb67-4d35-ae5c-4871184b7ee6)
+
+
+![image](https://github.com/user-attachments/assets/42020446-8e25-4274-a707-cb0651b27a1f)
+
+To Do Post-Synthesis timing analysis with OpenSTA tool
+```c
+// Change directory to openlane flow directory
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+//we can invoke the OpenLANE flow docker sub-system by just running this command
+docker
+```
+
+```c
+// Now that we have entered the OpenLANE flow contained docker sub-system we can invoke the OpenLANE flow in the Interactive mode using the following command
+./flow.tcl -interactive
+
+// Now that OpenLANE flow is open we have to input the required packages for proper functionality of the OpenLANE flow
+package require openlane 0.9 
+
+// Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
+prep -design picorv32a -tag 01-09_15-54 -overwrite
+
+// Adiitional commands to include newly added lef to openlane flow
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+```
+
+```c
+// Command to set new value for SYNTH_SIZING
+set ::env(SYNTH_SIZING) 1
+
+// Now that the design is prepped and ready, we can run synthesis using following command
+run_synthesis
+```
+
+Newly created `my_base.sdc` for STA analysis in `openlane/designs/picorv32a/src` directory based on the file `openlane/scripts/base.sdc`
+
+![image](https://github.com/user-attachments/assets/9138039c-4eeb-4faa-bf9a-63c313c651c7)
+Newly created `pre_sta.conf` for STA analysis in `openlane` directory
+Here is CTS information in  README.md FILE
+
+![image](https://github.com/user-attachments/assets/879fc29a-b478-44b0-b59d-6b470eb676cc)
+In cts.tcl file 
+
+![image](https://github.com/user-attachments/assets/066d7873-658b-4804-913a-128a8952273d)
+```c
+// Command to run OpenROAD tool
+openroad
+
+// Reading lef file
+read_lef /openLANE_flow/designs/picorv32a/runs/01-09_15-54/tmp/merged.lef
+
+// Reading def file
+read_def /openLANE_flow/designs/picorv32a/runs/01-09_15-54/results/cts/picorv32a.cts.def
+
+// Creating an OpenROAD database to work with
+write_db pico_cts.db
+
+// Loading the created database in OpenROAD
+read_db pico_cts.db
+
+// Read netlist post CTS
+read_verilog /openLANE_flow/designs/picorv32a/runs/01-09_15-54/results/synthesis/picorv32a.synthesis_cts.v
+
+// Read library for design
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+
+// Link design and library
+link_design picorv32a
+
+// Read in the custom sdc we created
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+
+// Setting all cloks as propagated clocks
+set_propagated_clock [all_clocks]
+
+// Check syntax of 'report_checks' command
+help report_checks
+
+// Generating custom timing report
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+```
+
+
+![image](https://github.com/user-attachments/assets/24fe8c5c-9168-4381-a56e-dc1f0f99aeca)
+
+![image](https://github.com/user-attachments/assets/04c03d22-3a0a-4500-8dde-362988d2cda3)
+
+![image](https://github.com/user-attachments/assets/cc837306-f2c0-4537-81a0-a064294d72fc)
+
+![image](https://github.com/user-attachments/assets/da7484a5-4df9-4217-8d11-e6cf3e481662)
+```c
+# Change directory to openlane
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+# Command to invoke OpenSTA tool with script
+sta pre_sta.conf
+```
+
+![image](https://github.com/user-attachments/assets/7c47dfea-f4b8-4dca-87bc-b7d83887f5fa)
+
+![image](https://github.com/user-attachments/assets/5b956d21-f1eb-4f30-acdf-910fd815ace8)
+Since more fanout is causing more delay we can add parameter to reduce fanout and do synthesis again
+```c
+// Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
+prep -design picorv32a -tag 01-09_15-54 -overwrite
+
+// Adiitional commands to include newly added lef to openlane flow
+set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+add_lefs -src $lefs
+```
+
+```c
+// Command to set new value for SYNTH_SIZING
+set ::env(SYNTH_SIZING) 1
+
+// Command to set new value for SYNTH_MAX_FANOUT
+set ::env(SYNTH_MAX_FANOUT) 4
+
+// Command to display current value of variable SYNTH_DRIVING_CELL to check whether it's the proper cell or not
+echo $::env(SYNTH_DRIVING_CELL)
+
+// Now that the design is prepped and ready, we can run synthesis using following command
+run_synthesis
+```
+
+![image](https://github.com/user-attachments/assets/a3291f40-95df-4c06-9a68-25620376e7b7)
+
+![image](https://github.com/user-attachments/assets/1e5ae8da-ed4f-458b-a176-d5d3727fd989)
+```c
+# Change directory to openlane
+cd Desktop/work/tools/openlane_working_dir/openlane
+
+# Command to invoke OpenSTA tool with script
+sta pre_sta.conf
+```
+
+![image](https://github.com/user-attachments/assets/4d706876-bd00-4898-8c66-b68bcceddae4)
+
+![image](https://github.com/user-attachments/assets/06dc6725-d378-4708-91be-4c8afbb05eb7)
+### **Make timing ECO fixes to remove all violations.**
+
+Upsizing the buffers
+
+```c
+// Reports all the connections to a net
+report_net -connections _11672_
+
+// Checking command syntax
+help replace_cell
+
+// Replacing cell
+replace_cell _13690_ sky130_fd_sc_hd__or2_4
+replace_cell _13165_ sky130_fd_sc_hd__or3_4
+
+// Generating custom timing report
+report_checks -fields {net cap slew input_pins} -digits 4
+```
+
+![image](https://github.com/user-attachments/assets/29ee4da4-00d0-4cf3-a92d-9bf3768e7399)
+
+![image](https://github.com/user-attachments/assets/021c9b82-cbec-471e-9185-3ea1b2180edc)
+<aside>
+💡
+
+**`It is observed that slack is reduced from -23.89 to -23.2821 by replacing two OR gates of driver strength 4.`**
+
+</aside>
+
+```c
+// Replacing cell
+replace_cell _13132_ sky130_fd_sc_hd__or4_4
+replace_cell _13161_ sky130_fd_sc_hd__or3_4
+replace_cell _13691_ sky130_fd_sc_hd__or3_4
+
+// Generating custom timing report
+report_checks -fields {net cap slew input_pins} -digits 4
+```
+
+
+![Uploading image.png…]()
+<aside>
+💡
+
+**`It is observed that slack is reduced from -23.2821 to 22.5828 by replacing three OR gates of driver strength 4.`**
+
+</aside>
+
+```c
+# Change from home directory to synthesis results directory
+cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/01-09_15-54/results/synthesis/
+
+# List contents of the directory
+ls
+
+# Copy and rename the netlist
+cp picorv32a.synthesis.v picorv32a.synthesis_old.v
+
+# List contents of the directory
+ls
+```
+
+![Uploading image.png…]()
+Verified that the netlist is overwritten by checking that instance _13161_ is replaced with sky130_fd_sc_hd__or3_4 i/ modified netlist in picorv32a.synthesis.v 
+
+![Uploading image.png…]()
+```c
+// Check syntax
+help write_verilog
+
+// Overwriting current synthesis netlist
+write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/01-09_15-54/results/synthesis/picorv32a.synthesis.v
+
+// Exit from OpenSTA since timing analysis is done
+exit
+```
+
+![Uploading image.png…]()
+```c
+//To run floorplan and placement
+run_floorplan
+run_placement
+```

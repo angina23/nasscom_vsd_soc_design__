@@ -1,6 +1,8 @@
-![image](https://github.com/user-attachments/assets/3ead1197-87fd-4021-97c2-afe5fe01a041)# Nasscom_vsd_soc_design__
+ Nasscom_vsd_soc_design__
+
 ### `DURATION : 21 AUGUST 2024 -3 SEPTEMBER 2024`
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9498c3a9-02f9-427c-a6d4-a4a554a6a4f6/d91631cb-a7dc-4ec6-8ae7-71b90e07b813/6b739dc0-3610-4cb4-a7a8-4d5d2ec54456.png)
+![image](https://github.com/user-attachments/assets/c84556e5-748c-469e-8376-b7bcfed1e3ff)
+
 
 **LEARNING  THROUGH LABWORK :** 
 

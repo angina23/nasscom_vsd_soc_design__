@@ -39,21 +39,13 @@ exit
 ```
 
 ### **Screenshots of running each commands**
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9498c3a9-02f9-427c-a6d4-a4a554a6a4f6/3f232372-f9b9-4900-9c2b-02c95a22f2ee/Untitled.png)
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9498c3a9-02f9-427c-a6d4-a4a554a6a4f6/ca339fc7-a5cf-4cfc-ae9b-dd8172f01c71/Untitled.png)
-
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/9498c3a9-02f9-427c-a6d4-a4a554a6a4f6/126423ef-4182-489b-a885-ffed9ffdb2d4/image.png)
-
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/9498c3a9-02f9-427c-a6d4-a4a554a6a4f6/7234e31c-2bd7-4e13-a386-3184e95805db/image.png)
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9498c3a9-02f9-427c-a6d4-a4a554a6a4f6/73c7459d-2725-46f7-9c70-210d380fd2e0/Untitled.png)
-
-### **TO CHECK THE synthesized netlist**
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9498c3a9-02f9-427c-a6d4-a4a554a6a4f6/313092b0-97f9-45b5-b85a-698f40b14786/Untitled.png)
-
+![image](https://github.com/user-attachments/assets/e8ecd05e-e36c-4fdb-ac71-b00b53db9e40)
+![image](https://github.com/user-attachments/assets/f2c717f1-e15d-484c-95bb-f41ae356103d)
+![image](https://github.com/user-attachments/assets/7a856080-e73c-45c5-b865-4a82954d72fb)
+![image](https://github.com/user-attachments/assets/621a2d35-01e8-418f-bdb7-50115772e251)
+![image](https://github.com/user-attachments/assets/50cc484d-b4a7-420d-bd8d-d02b12c157d1)
+TO CHECK THE synthesized netlist
+![image](https://github.com/user-attachments/assets/714ab350-d052-45aa-b24d-1770c14a08fb)
 ## **To calculate the flop ratio**
 
 FLOP RATIO  = NO. OF D FLIP FLOP/ TOTAL NUMBER OF CELLS
@@ -62,8 +54,7 @@ $$
 FLOP ratio  = 1613/14876 *100 =10.84
 $$
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9498c3a9-02f9-427c-a6d4-a4a554a6a4f6/a488e043-7e14-4d43-b126-237b5801a703/Untitled.png)
+![image](https://github.com/user-attachments/assets/4f88cd13-3947-45ca-ab3a-043ccca4b06d)
+To check the timing and other reports
 
-### **To check the timing and other reports**
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/9498c3a9-02f9-427c-a6d4-a4a554a6a4f6/5ae79a2b-d4c6-4059-9237-ab3d82e781ce/Untitled.png)
+![image](https://github.com/user-attachments/assets/5227d3b4-91a3-4294-ae5e-c1b5b9f61d97)

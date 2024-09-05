@@ -691,16 +691,17 @@ run_synthesis
 
 ![image](https://github.com/user-attachments/assets/1e5ae8da-ed4f-458b-a176-d5d3727fd989)
 ```c
-# Change directory to openlane
+// Change directory to openlane
 cd Desktop/work/tools/openlane_working_dir/openlane
 
-# Command to invoke OpenSTA tool with script
+// Command to invoke OpenSTA tool with script
 sta pre_sta.conf
 ```
 
 ![image](https://github.com/user-attachments/assets/4d706876-bd00-4898-8c66-b68bcceddae4)
 
 ![image](https://github.com/user-attachments/assets/06dc6725-d378-4708-91be-4c8afbb05eb7)
+
 ### **Make timing ECO fixes to remove all violations.**
 
 Upsizing the buffers
@@ -739,9 +740,11 @@ replace_cell _13691_ sky130_fd_sc_hd__or3_4
 // Generating custom timing report
 report_checks -fields {net cap slew input_pins} -digits 4
 ```
+![image](https://github.com/user-attachments/assets/9b234062-b98c-4aca-b97c-2f0f983e8a3c)
+
+![image](https://github.com/user-attachments/assets/7c65e9fb-f92e-447b-b3d6-11990d744f5c)
 
 
-![Uploading image.png…]()
 <aside>
 💡
 
@@ -750,23 +753,25 @@ report_checks -fields {net cap slew input_pins} -digits 4
 </aside>
 
 ```c
-# Change from home directory to synthesis results directory
+// Change from home directory to synthesis results directory
 cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/01-09_15-54/results/synthesis/
 
-# List contents of the directory
+// List contents of the directory
 ls
 
-# Copy and rename the netlist
+// Copy and rename the netlist
 cp picorv32a.synthesis.v picorv32a.synthesis_old.v
 
-# List contents of the directory
+// List contents of the directory
 ls
 ```
+![image](https://github.com/user-attachments/assets/a975a5f5-b0dc-406b-9441-acecc18a50b2)
 
-![Uploading image.png…]()
+
 Verified that the netlist is overwritten by checking that instance _13161_ is replaced with sky130_fd_sc_hd__or3_4 i/ modified netlist in picorv32a.synthesis.v 
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/cf0a090c-c3b8-4986-84d9-045c68c37f31)
+
 ```c
 // Check syntax
 help write_verilog
@@ -778,9 +783,55 @@ write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/des
 exit
 ```
 
-![Uploading image.png…]()
+
+
 ```c
 //To run floorplan and placement
 run_floorplan
 run_placement
+```
+```c
+// With placement done we are now ready to run CTS
+run_cts
+```
+![Uploading image.png…]()
+**Post-CTS OpenROAD timing analysis.**
+
+```c
+// Command to run OpenROAD tool
+openroad
+
+// Reading lef file
+read_lef /openLANE_flow/designs/picorv32a/runs/01-09_15-54/tmp/merged.lef
+
+// Reading def file
+read_def /openLANE_flow/designs/picorv32a/runs/01-09_15-54/results/cts/picorv32a.cts.def
+
+// Creating an OpenROAD database to work with
+write_db pico_cts.db
+
+// Loading the created database in OpenROAD
+read_db pico_cts.db
+// Read netlist post CTS
+read_verilog /openLANE_flow/designs/picorv32a/runs/01-09_15-54/results/synthesis/picorv32a.synthesis_cts.v
+
+// Read library for design
+read_liberty $::env(LIB_SYNTH_COMPLETE)
+
+// Link design and library
+link_design picorv32a
+
+// Read in the custom sdc we created
+read_sdc /openLANE_flow/designs/picorv32a/src/my_base.sdc
+
+// Setting all cloks as propagated clocks
+set_propagated_clock [all_clocks]
+
+// Check syntax of 'report_checks' command
+help report_checks
+// Generating custom timing report
+report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
+
+// Exit to OpenLANE flow
+exit
 ```

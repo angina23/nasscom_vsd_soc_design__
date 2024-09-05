@@ -905,7 +905,8 @@ run_cts
 gen_pdn 
 ```
 ![image](https://github.com/user-attachments/assets/71a34cdf-2d05-4350-aa37-ca610edfbc6d)
-![image](https://github.com/user-attachments/assets/341b94fb-2d9d-4b91-b7df-5757074e8a40)
+
+![image](https://github.com/user-attachments/assets/d9221cb1-5d16-485b-b752-b975acec2cb3)
 ```c
 // Change directory to path containing generated PDN def
 cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/03-09_06-12/tmp/floorplan/
@@ -913,7 +914,8 @@ cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/03-09
 // Command to load the PDN def in magic tool
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read 14-pdn.def &
 ```
-![image](https://github.com/user-attachments/assets/d9221cb1-5d16-485b-b752-b975acec2cb3)
+![image](https://github.com/user-attachments/assets/341b94fb-2d9d-4b91-b7df-5757074e8a40)
+
 Here are the screenshots of the PDN def in the magic window
 ![image](https://github.com/user-attachments/assets/44ec0499-5eda-4125-acde-064d213f7c4b)
 ![image](https://github.com/user-attachments/assets/71e48756-8c27-4170-ab23-ed08209a4794)

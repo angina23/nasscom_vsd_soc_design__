@@ -1,6 +1,6 @@
 # Nasscom_vsd_soc_design__
 
-PROJECT : RISC-V based core Picorv32 implementation and characterization
+# PROJECT : RISC-V based core Picorv32 implementation and characterization
 ### `DURATION : 21 AUGUST 2024 -3 SEPTEMBER 2024`
 ![image](https://github.com/user-attachments/assets/c84556e5-748c-469e-8376-b7bcfed1e3ff)
 
@@ -13,14 +13,14 @@ PROJECT : RISC-V based core Picorv32 implementation and characterization
 design.
 - Did Post-Synthesis timing analysis with OpenSTA tool and made timing ECO fixes to remove all violations(setup and hold time violations).
 - Cloned a custom inverter standard cell design and  run the openlane flow to verifiy that it is accepted in PnR flow.
-- ### **TOOLS USED:**
+  ### **TOOLS USED:**
 
 - Yosys Synthesis Suite
 - OpenLANE RTL2GDS digital design suite
 - NGSpice for characterization
 - Magic for layout and floorplanning
 - OpenSTA for Static timing analysis
-- ### **LAB EXERCISES:**
+ ### **LAB EXERCISES:**
 
 - RISC-V core synthesis
 - ASIC design flow
@@ -28,7 +28,7 @@ design.
 - Static timing analysis
 - Layout and characterization
 
-### **DAY 1: Inception of open source EDA, openLANE and Sky130 PDK.**
+## **DAY 1: Inception of open source EDA, openLANE and Sky130 PDK.**
 ### **STARTING WITH OPENLANE**
 
 ```c

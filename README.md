@@ -56,7 +56,8 @@ FLOP RATIO  = NO. OF D FLIP FLOP/ TOTAL NUMBER OF CELLS
 $$
 FLOP ratio  = 1613/14876 *100 =10.84
 $$
-![image](https://github.com/user-attachments/assets/219921b2-ea6e-4ca7-9834-ebc2ca91a55b)
+![image](https://github.com/user-attachments/assets/7d05a126-c3e2-4763-b6bc-1ae2cb5fecbd)
+
 
 To check the timing and other reports
 ![image](https://github.com/user-attachments/assets/354b5c29-d433-4273-81ce-babf52f8956f)

@@ -607,6 +607,9 @@ In cts.tcl file
 ![image](https://github.com/user-attachments/assets/d0dc1831-da03-4d82-9530-72de659f432c)
 ![image](https://github.com/user-attachments/assets/62cfa624-44d2-480a-ad5b-afa75bd25135)
 In or_cts.tcl file
+
+![image](https://github.com/user-attachments/assets/0df76ee8-0d52-4a9c-a48d-ea1dc5157795)
+
 ```c
 // Command to run OpenROAD tool
 openroad
@@ -685,10 +688,10 @@ run_synthesis
 ![image](https://github.com/user-attachments/assets/4d853fe6-c046-4627-903b-8298e63609fb)
 ![image](https://github.com/user-attachments/assets/1eba1ce6-6274-45ed-affe-aa442c9d1748)
 ```c
-# Change directory to openlane
+// Change directory to openlane
 cd Desktop/work/tools/openlane_working_dir/openlane
 
-# Command to invoke OpenSTA tool with script
+// Command to invoke OpenSTA tool with script
 sta pre_sta.conf
 ```
 ![image](https://github.com/user-attachments/assets/cd91605a-6fd1-4fdd-9742-9620692273c1)

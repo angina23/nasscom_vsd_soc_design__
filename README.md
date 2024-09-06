@@ -918,10 +918,14 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 ![image](https://github.com/user-attachments/assets/341b94fb-2d9d-4b91-b7df-5757074e8a40)
 
 Here are the screenshots of the PDN def in the magic window
-![image](https://github.com/user-attachments/assets/44ec0499-5eda-4125-acde-064d213f7c4b)
-![image](https://github.com/user-attachments/assets/71e48756-8c27-4170-ab23-ed08209a4794)
-![image](https://github.com/user-attachments/assets/a1607c8c-ab38-4afd-85b0-d7bab81068b3)
-![image](https://github.com/user-attachments/assets/0f23cf2f-03ba-4c20-bbf3-a29c383d5111)
+
+![image](https://github.com/user-attachments/assets/6599ff63-f1a0-4dfb-81fc-535266eb7737)
+
+![image](https://github.com/user-attachments/assets/dafe74d5-fdd3-4f2d-8ace-0bc560afe37c)
+
+![image](https://github.com/user-attachments/assets/51d26e2c-b962-4376-a4a1-e8ee70d062cd)
+
+![image](https://github.com/user-attachments/assets/5586b270-9f30-4753-be38-73df2cf52646)
 **To perfrom detailed routing using TritonRoute and explore the routed layout.**
 
 ```c
@@ -934,11 +938,18 @@ echo $::env(ROUTING_STRATEGY)
 //Command for detailed route using TritonRoute
 run_routing
 ```
-![image](https://github.com/user-attachments/assets/a7b9ea67-8704-4589-8c1a-f58e876a220c)
-![image](https://github.com/user-attachments/assets/33c0ad3d-4516-4808-976b-6b0a783588d7)
-![image](https://github.com/user-attachments/assets/a8261166-3fce-4134-80af-a206d3a8c514)
-![image](https://github.com/user-attachments/assets/081ee648-d968-4b64-9762-c31878397dc7)
-![image](https://github.com/user-attachments/assets/8f21587b-fef7-4b5d-8c2a-1e7883ec34c5)
+
+![image](https://github.com/user-attachments/assets/1aca71b0-7e64-492a-b8e5-81e755f1b893)
+
+![image](https://github.com/user-attachments/assets/7b44f88a-5670-43d0-b1c8-0bc3056859a2)
+
+![image](https://github.com/user-attachments/assets/8a3f4016-14f9-4052-b8a4-482f4e6328eb)
+
+
+![image](https://github.com/user-attachments/assets/1d6ae3cd-4d32-48a3-9927-7b7fa5e4bd33)
+
+
+![image](https://github.com/user-attachments/assets/def7b79e-5baa-433e-a217-e30b26009259)
 ```c
 // Change directory to path containing routed def
 cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/03-09_06-12/results/routing/
@@ -946,14 +957,20 @@ cd Desktop/work/tools/openlane_working_dir/openlane/designs/picorv32a/runs/03-09
 // Command to load the routed def in magic tool
 magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.lef def read picorv32a.def &
 ```
-![image](https://github.com/user-attachments/assets/4fbce7a7-b395-4fcd-8841-914f941e6be6)
-![image](https://github.com/user-attachments/assets/313de14d-8a1a-4398-9e6b-eac781993aaa)
-![image](https://github.com/user-attachments/assets/d7bfd5d2-e7d9-4dbe-b529-89856047e073)
-![image](https://github.com/user-attachments/assets/6bcecabb-026d-402d-84e2-170b8abb39e9)
-![image](https://github.com/user-attachments/assets/676ef9e1-7a1c-4234-899a-6454f68b36a2)
-Fast route guide present in openlane/designs/picorv32a/runs/03-09_06-12/tmp/routing directory
-![image](https://github.com/user-attachments/assets/0805f8ae-69f8-4d3d-8f06-0a6cbbdf153d)
 
+![image](https://github.com/user-attachments/assets/1e4a79cc-e63e-4c14-b451-8a2d1b3afb97)
+
+![image](https://github.com/user-attachments/assets/aae2425f-3fe5-49f0-9f6f-d245f39cca09)
+
+
+![image](https://github.com/user-attachments/assets/271428bd-fbce-4e86-a870-3c6c621215f8)
+
+![image](https://github.com/user-attachments/assets/f65946d9-0583-4e6d-9763-1f3bc7842f05)
+
+![image](https://github.com/user-attachments/assets/7a8782d3-d947-4fc2-bf53-6ebc671eea73)
+Fast route guide present in openlane/designs/picorv32a/runs/03-09_06-12/tmp/routing directory
+
+![image](https://github.com/user-attachments/assets/594afac7-e153-43bc-b095-105147dcaaac)
 **Post-Route parasitic extraction using SPEF extractor.**
 
 ```c
@@ -1007,10 +1024,11 @@ report_checks -path_delay min_max -fields {slew trans net cap input_pins} -forma
 exit
 ```
 
-![image](https://github.com/user-attachments/assets/2bd8e117-1384-4bdf-a9b8-6658be063459)
+![image](https://github.com/user-attachments/assets/3fb1b1a4-152d-47d0-9ba1-b62c32c85e95)
 
-![image](https://github.com/user-attachments/assets/7957461b-0419-4eeb-93a4-760ab850354b)
+![image](https://github.com/user-attachments/assets/51391f82-5bf4-45dc-8c33-1119206c7c43)
 
-![image](https://github.com/user-attachments/assets/9a90aa16-5a97-45bc-b9e2-3d462915090a)
+![image](https://github.com/user-attachments/assets/f38e3254-c4f4-4d72-975e-992736559901)
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/5a3b0c04-fa5a-4341-a61a-b37555373dfe)
+

@@ -13,7 +13,7 @@
 design.
 - Did Post-Synthesis timing analysis with OpenSTA tool and made timing ECO fixes to remove all violations(setup and hold time violations).
 - Cloned a custom inverter standard cell design and  run the openlane flow to verifiy that it is accepted in PnR flow.
-  ### **TOOLS USED:**
+### **TOOLS USED:**
 
 - Yosys Synthesis Suite
 - OpenLANE RTL2GDS digital design suite

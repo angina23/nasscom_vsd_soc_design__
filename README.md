@@ -41,13 +41,14 @@ exit
 ```
 
 ### **Screenshots of running each commands**
-![image](https://github.com/user-attachments/assets/e8ecd05e-e36c-4fdb-ac71-b00b53db9e40)
-![image](https://github.com/user-attachments/assets/f2c717f1-e15d-484c-95bb-f41ae356103d)
-![image](https://github.com/user-attachments/assets/7a856080-e73c-45c5-b865-4a82954d72fb)
-![image](https://github.com/user-attachments/assets/621a2d35-01e8-418f-bdb7-50115772e251)
-![image](https://github.com/user-attachments/assets/50cc484d-b4a7-420d-bd8d-d02b12c157d1)
+![image](https://github.com/user-attachments/assets/6b738df1-8687-409e-bfea-560b890618da)
+![image](https://github.com/user-attachments/assets/6cc42860-2935-438d-849d-39f542a70a29)
+![image](https://github.com/user-attachments/assets/1be7d017-91f6-4bba-839d-f0874ca2017a)
+![image](https://github.com/user-attachments/assets/45c4b6a9-bbb4-4f08-a799-8e71ed86c20c)
+![image](https://github.com/user-attachments/assets/27f65e90-2718-44d9-b34e-4daa13b61786)
+
 TO CHECK THE synthesized netlist
-![image](https://github.com/user-attachments/assets/714ab350-d052-45aa-b24d-1770c14a08fb)
+![image](https://github.com/user-attachments/assets/c6df3c47-b782-46d2-8ac0-409b481e269f)
 ## **To calculate the flop ratio**
 
 FLOP RATIO  = NO. OF D FLIP FLOP/ TOTAL NUMBER OF CELLS
@@ -55,11 +56,11 @@ FLOP RATIO  = NO. OF D FLIP FLOP/ TOTAL NUMBER OF CELLS
 $$
 FLOP ratio  = 1613/14876 *100 =10.84
 $$
+![image](https://github.com/user-attachments/assets/219921b2-ea6e-4ca7-9834-ebc2ca91a55b)
 
-![image](https://github.com/user-attachments/assets/4f88cd13-3947-45ca-ab3a-043ccca4b06d)
 To check the timing and other reports
+![image](https://github.com/user-attachments/assets/354b5c29-d433-4273-81ce-babf52f8956f)
 
-![image](https://github.com/user-attachments/assets/5227d3b4-91a3-4294-ae5e-c1b5b9f61d97)
 
 
 # **DAY 2:Good floorplan vs Bad floorplan and introduction to library cells.**

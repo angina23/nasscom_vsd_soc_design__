@@ -97,31 +97,30 @@ exit
 In this we see the different TCL files and one read me file in  configuration  folder.
 ![image](https://github.com/user-attachments/assets/12c76982-0869-444b-82f3-d726eb8db832)
 After opening READ.me file we see global variables and similarly in floorplan we see  whole set of switches.
-![image](https://github.com/user-attachments/assets/0f9ffc1c-de4c-4cba-b01f-16d01e95182e)
-![image](https://github.com/user-attachments/assets/67fb8f2c-17eb-4cf1-adb7-6af55cfc48c7)
-![image](https://github.com/user-attachments/assets/ea99590a-9380-45dc-ac3f-1b03d1edaf24)
-![image](https://github.com/user-attachments/assets/8f6d68c9-dde7-4578-a667-d102203c0090)
+![image](https://github.com/user-attachments/assets/b7b7c728-415f-4762-8969-4515404426c0)
+![image](https://github.com/user-attachments/assets/62125a1c-85fe-45b1-a719-892139971880)
+![image](https://github.com/user-attachments/assets/6db754cc-0ac6-42ce-bb41-76cbfa21540e)
+![image](https://github.com/user-attachments/assets/65a4e14a-1699-4f91-bd78-01337d4fb35a)
 After opening the floorplan.tcl file we see the default parameters set for the floorplan
-
-![image](https://github.com/user-attachments/assets/eda9fede-260f-41d6-b857-fd8c4c222dc0)
+![image](https://github.com/user-attachments/assets/b3008ac2-8432-4733-a98e-2715dcc17fbf)
 After opening the details in the config.tcl file.
-![image](https://github.com/user-attachments/assets/869ef60a-1af0-486d-ad3d-22e3644296aa)
+![image](https://github.com/user-attachments/assets/f6d31c6d-7dfa-4f2f-b402-481031a43e31)
 ```c
 //To run floorplan give the following command
 run_floorplan
-
 ```
-![image](https://github.com/user-attachments/assets/271bb172-6564-43d2-92a3-ae4b9a99dad1)
+![image](https://github.com/user-attachments/assets/2b2d6e77-b1e6-4d1d-8a9e-57a4582766a3)
 After running commands 
 ```c
 // In directory /Desktop/work/tools/openlane_working_dir/designs/picorv32a/runs/28-08_16-10/results/floorplan$
   less picorv32a.floorplan.def
 ```
-![image](https://github.com/user-attachments/assets/555cdf9d-6cc4-493c-ada2-95fd4a480bfe)
+![image](https://github.com/user-attachments/assets/38e8eace-da8f-41c9-a4e1-208594da7be6)
 **This shows the dimension of the die area where (0 0)(for the lower left corner) and (660685 , 671405)(for the right up corner).**
 
 **Also 1 um is equal to 1000 database units and thus these units should be divided by 1000 to get dimension in um.**
-![image](https://github.com/user-attachments/assets/27a833a3-7c21-4f7a-8b6a-483df272d739)
+![image](https://github.com/user-attachments/assets/a8918f99-e4c2-4548-a697-045c319785d1)
+
 
 $$
 Die width = 660685 , Die height = 671405

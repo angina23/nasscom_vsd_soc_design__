@@ -322,6 +322,7 @@ Maximum voltage = 3.3V
 Rise transition time = output_rise(80%) - output_rise(20%)
 ![image](https://github.com/user-attachments/assets/83479e7f-10fb-4268-9876-461171d90245)
 <aside>
+ 
 $$
 6.24578-6.18153=0.0641ns
 $$

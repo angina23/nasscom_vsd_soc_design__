@@ -561,11 +561,11 @@ magic -T /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs
 ![image](https://github.com/user-attachments/assets/f16a2bb9-b2a2-4c62-beda-e168e5401735)
 
 ![image](https://github.com/user-attachments/assets/d1971908-eb67-4d35-ae5c-4871184b7ee6)
+![image](https://github.com/user-attachments/assets/3bd4cd2e-0de0-477a-8cf4-f363373841f1)
+![image](https://github.com/user-attachments/assets/b042d4d7-7d94-4076-865d-f43221b8cf7d)
 
+**To Do Post-Synthesis timing analysis with OpenSTA tool**
 
-![image](https://github.com/user-attachments/assets/42020446-8e25-4274-a707-cb0651b27a1f)
-
-To Do Post-Synthesis timing analysis with OpenSTA tool
 ```c
 // Change directory to openlane flow directory
 cd Desktop/work/tools/openlane_working_dir/openlane
@@ -598,15 +598,15 @@ run_synthesis
 ```
 
 Newly created `my_base.sdc` for STA analysis in `openlane/designs/picorv32a/src` directory based on the file `openlane/scripts/base.sdc`
-
-![image](https://github.com/user-attachments/assets/9138039c-4eeb-4faa-bf9a-63c313c651c7)
-Newly created `pre_sta.conf` for STA analysis in `openlane` directory
-Here is CTS information in  README.md FILE
-
-![image](https://github.com/user-attachments/assets/879fc29a-b478-44b0-b59d-6b470eb676cc)
+![image](https://github.com/user-attachments/assets/02c6c714-5638-42dc-baee-06b673f6a557)
+Newly created pre_sta.conf for STA analysis in openlane directory
+![image](https://github.com/user-attachments/assets/1665a71a-ced6-4f8a-8c14-bd1055c0f9aa)
+ Here is CTS information in  README.md FILE
+![image](https://github.com/user-attachments/assets/4ef47101-20b8-49db-a1a0-bdd7222a0951)
 In cts.tcl file 
-
-![image](https://github.com/user-attachments/assets/066d7873-658b-4804-913a-128a8952273d)
+![image](https://github.com/user-attachments/assets/d0dc1831-da03-4d82-9530-72de659f432c)
+![image](https://github.com/user-attachments/assets/62cfa624-44d2-480a-ad5b-afa75bd25135)
+In or_cts.tcl file
 ```c
 // Command to run OpenROAD tool
 openroad
@@ -644,27 +644,22 @@ help report_checks
 // Generating custom timing report
 report_checks -path_delay min_max -fields {slew trans net cap input_pins} -format full_clock_expanded -digits 4
 ```
-
-
-![image](https://github.com/user-attachments/assets/24fe8c5c-9168-4381-a56e-dc1f0f99aeca)
-
-![image](https://github.com/user-attachments/assets/04c03d22-3a0a-4500-8dde-362988d2cda3)
-
-![image](https://github.com/user-attachments/assets/cc837306-f2c0-4537-81a0-a064294d72fc)
-
-![image](https://github.com/user-attachments/assets/da7484a5-4df9-4217-8d11-e6cf3e481662)
+![image](https://github.com/user-attachments/assets/839a65ef-b2d9-4f6c-9494-e3796af8f3e5)
+![image](https://github.com/user-attachments/assets/6157fc35-6640-49ec-a538-9da1907570b4)
+![image](https://github.com/user-attachments/assets/2e30aa20-90ff-4dae-86a8-20a2bc3218ec)
+![image](https://github.com/user-attachments/assets/2a0ede0a-4118-4073-b6be-46bf0d663655)
+![image](https://github.com/user-attachments/assets/701cf9b8-efca-4973-b920-f4705a923560)
 ```c
-# Change directory to openlane
+// Change directory to openlane
 cd Desktop/work/tools/openlane_working_dir/openlane
 
-# Command to invoke OpenSTA tool with script
+// Command to invoke OpenSTA tool with script
 sta pre_sta.conf
 ```
-
-![image](https://github.com/user-attachments/assets/7c47dfea-f4b8-4dca-87bc-b7d83887f5fa)
-
-![image](https://github.com/user-attachments/assets/5b956d21-f1eb-4f30-acdf-910fd815ace8)
+![image](https://github.com/user-attachments/assets/ffc0a17d-fa95-451c-99c3-bac67c1afbd9)
+![image](https://github.com/user-attachments/assets/2de427ed-dde7-4148-8ff3-89f7ea150310)
 Since more fanout is causing more delay we can add parameter to reduce fanout and do synthesis again
+
 ```c
 // Now the OpenLANE flow is ready to run any design and initially we have to prep the design creating some necessary files and directories for running a specific design which in our case is 'picorv32a'
 prep -design picorv32a -tag 01-09_15-54 -overwrite
@@ -687,21 +682,20 @@ echo $::env(SYNTH_DRIVING_CELL)
 // Now that the design is prepped and ready, we can run synthesis using following command
 run_synthesis
 ```
-
-![image](https://github.com/user-attachments/assets/a3291f40-95df-4c06-9a68-25620376e7b7)
-
-![image](https://github.com/user-attachments/assets/1e5ae8da-ed4f-458b-a176-d5d3727fd989)
+![image](https://github.com/user-attachments/assets/4d853fe6-c046-4627-903b-8298e63609fb)
+![image](https://github.com/user-attachments/assets/1eba1ce6-6274-45ed-affe-aa442c9d1748)
 ```c
-// Change directory to openlane
+# Change directory to openlane
 cd Desktop/work/tools/openlane_working_dir/openlane
 
-// Command to invoke OpenSTA tool with script
+# Command to invoke OpenSTA tool with script
 sta pre_sta.conf
 ```
+![image](https://github.com/user-attachments/assets/cd91605a-6fd1-4fdd-9742-9620692273c1)
+![image](https://github.com/user-attachments/assets/e66dd7bd-a1dc-4e91-b194-397f0fd39ad3)
 
-![image](https://github.com/user-attachments/assets/4d706876-bd00-4898-8c66-b68bcceddae4)
 
-![image](https://github.com/user-attachments/assets/06dc6725-d378-4708-91be-4c8afbb05eb7)
+
 
 ### **Make timing ECO fixes to remove all violations.**
 

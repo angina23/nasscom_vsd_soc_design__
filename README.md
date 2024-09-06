@@ -322,8 +322,8 @@ Maximum voltage = 3.3V
 Rise transition time = output_rise(80%) - output_rise(20%)
 ![image](https://github.com/user-attachments/assets/83479e7f-10fb-4268-9876-461171d90245)
 <aside>
-### **Rise transition time = 0.0641 ns**
 
+### Rise transition time = 0.0641 ns
 </aside>
 
 1. **Fall transition time**
@@ -332,7 +332,13 @@ Rise transition time = output_rise(80%) - output_rise(20%)
 - Fall transition time = output_fall(20%) - output_fall(80%)
 - ![image](https://github.com/user-attachments/assets/e0b9db9b-3c29-48a3-8078-51408948853b)
 <aside>
-💡 Fall transition time = 0.042ns
+
+ <aside>
+💡
+
+### Fall transition time = 0.042 ns
+
+</aside>
 
 </aside>
 
@@ -341,7 +347,13 @@ Rise transition time = output_rise(80%) - output_rise(20%)
 Rise cell delay  = output_rise(50%) - input_fall(50%)
 ![image](https://github.com/user-attachments/assets/1e64ea6f-c120-4c5d-8b70-d93dc7133678)
 <aside>
-💡 Rise cell delay  = 0.0615ns
+
+<aside>
+💡
+
+### Rise cell delay = 0.0615 ns
+
+</aside>
 
 </aside>
 
@@ -350,8 +362,13 @@ Rise cell delay  = output_rise(50%) - input_fall(50%)
 Fall cell delay =  output_fall(50%) - input_rise(50%)
 ![image](https://github.com/user-attachments/assets/c6125bed-f20d-478c-b98c-0c9f822dcb06)
 <aside>
-💡 Fall cell delay  = 0.028ns
 
+<aside>
+💡
+
+### Fall cell delay = 0.028 ns
+
+</aside>
 </aside>
 
 Commands to download and view the corrupted skywater process magic tech file and associated files to perform drc corrections

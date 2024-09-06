@@ -780,23 +780,21 @@ write_verilog /home/vsduser/Desktop/work/tools/openlane_working_dir/openlane/des
 // Exit from OpenSTA since timing analysis is done
 exit
 ```
-![image](https://github.com/user-attachments/assets/0b98a4a4-0a6a-432b-8bb9-e0f871429d6a)
 
-
-
+![image](https://github.com/user-attachments/assets/4ad95ac0-250d-4699-8068-9bb88d77ae54)
 ```c
 //To run floorplan and placement
 run_floorplan
 run_placement
 ```
-![image](https://github.com/user-attachments/assets/2a8516df-0179-4798-8a4d-9c38712caf1d)
 
+![image](https://github.com/user-attachments/assets/40c7bde6-8635-4a28-94ef-9c3942082185)
 ```c
 // With placement done we are now ready to run CTS
 run_cts
 ```
-![image](https://github.com/user-attachments/assets/28cc7beb-0525-4db1-a111-bc5b3547c75a)
 
+![image](https://github.com/user-attachments/assets/2c49b133-b55e-4c1f-a6fc-c92cbb4822b3)
 **Post-CTS OpenROAD timing analysis.**
 
 ```c
@@ -837,11 +835,16 @@ report_checks -path_delay min_max -fields {slew trans net cap input_pins} -forma
 // Exit to OpenLANE flow
 exit
 ```
-![image](https://github.com/user-attachments/assets/83c35ff4-097e-4514-ae6d-b0e6a1551359)
-![image](https://github.com/user-attachments/assets/1ee49bfc-14f7-4d54-996c-160357b2bee2)
-![image](https://github.com/user-attachments/assets/4b1089aa-43e9-4ea0-9171-67ff6a6e2123)
-![image](https://github.com/user-attachments/assets/0ccca5cc-fdf6-4a4e-8e33-e7df5c8cbed5)
-After running the modified netlist, we see that both hold time and setup time violations are met. 
+
+![image](https://github.com/user-attachments/assets/425d73cf-1677-47ea-adc4-e9c7d54baa45)
+
+![image](https://github.com/user-attachments/assets/1c1bd20a-055f-4757-9f45-882dcea7cee0)
+
+![image](https://github.com/user-attachments/assets/dc9f6d42-77cd-4f1b-ae8a-19c81e9d8b01)
+
+![image](https://github.com/user-attachments/assets/ff789fdc-19b8-49c4-9216-f5521831e280)
+
+### **`After running the modified netlist, we see that both hold time and setup time violations are met.`**
 
 
 

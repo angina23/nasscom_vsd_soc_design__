@@ -325,7 +325,10 @@ Rise transition time = output_rise(80%) - output_rise(20%)
 $$
 6.24578-6.18153=0.0641ns
 $$
+
+
 ### Rise transition time = 0.0641 ns
+
 </aside>
 
 1. **Fall transition time**

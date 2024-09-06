@@ -338,6 +338,10 @@ $$
 - Fall transition time = output_fall(20%) - output_fall(80%)
 - ![image](https://github.com/user-attachments/assets/e0b9db9b-3c29-48a3-8078-51408948853b)
 <aside>
+ 
+$$
+4.09465-4.05218 = 0.042ns
+$$
 
  <aside>
 💡
@@ -361,6 +365,10 @@ Rise cell delay  = output_rise(50%) - input_fall(50%)
 
 </aside>
 
+$$
+6.210-6.14989 = 0.0615ns
+$$
+
 </aside>
 
 1. **Fall cell delay**
@@ -368,6 +376,10 @@ Rise cell delay  = output_rise(50%) - input_fall(50%)
 Fall cell delay =  output_fall(50%) - input_rise(50%)
 ![image](https://github.com/user-attachments/assets/c6125bed-f20d-478c-b98c-0c9f822dcb06)
 <aside>
+ 
+$$
+4.07724-4.04989 = 0.028ns
+$$
 
 <aside>
 💡
@@ -479,6 +491,7 @@ $$
 $$
  width = 3*0.46=1.38um
 $$
+
 ![image](https://github.com/user-attachments/assets/5f56be24-63d7-4e9f-b2e9-9859e47b12a4)
 For height of the standard cell:
 
@@ -489,6 +502,7 @@ $$
 $$
 height = 8*0.34 =2.72um
 $$
+
 ![image](https://github.com/user-attachments/assets/ed089d2c-a267-4312-b83e-ff7aa20e27f8)
 **Layout file defines the layers, contacts of cell in magic.**
 
